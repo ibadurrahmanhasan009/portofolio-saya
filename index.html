@@ -15,41 +15,42 @@
 </head>
 <body>
 
-    <!-- NAVIGASI DOCK SAMPING KANAN -->
-    <aside class="nav-dock">
-        <!-- Logo di Paling Atas -->
-        <a href="#beranda" class="dock-logo">i</a>
+   <!-- NAVIGASI DOCK SAMPING KANAN -->
+<aside class="nav-dock">
+    <!-- Menu Ikon (Logo dihapus, menu otomatis naik ke paling atas) -->
+    <div class="dock-menu">
+        <a href="#beranda" class="dock-link active" data-tooltip="Beranda">
+            <i class="fas fa-home"></i>
+        </a>
+        <a href="#tentang" class="dock-link" data-tooltip="Tentang">
+            <i class="fas fa-user"></i>
+        </a>
+        <a href="#skil" class="dock-link" data-tooltip="Skil">
+            <i class="fas fa-code"></i>
+        </a>
+        <a href="#pendidikan" class="dock-link" data-tooltip="Pendidikan">
+            <i class="fas fa-graduation-cap"></i>
+        </a>
+        
+        <!-- FITUR BARU: PRESTASI & SERTIFIKAT -->
+        <a href="#prestasi" class="dock-link" data-tooltip="Prestasi">
+            <i class="fas fa-trophy"></i>
+        </a>
+        <a href="#sertifikat" class="dock-link" data-tooltip="Sertifikat">
+            <i class="fas fa-certificate"></i>
+        </a>
 
-        <!-- Menu Ikon di Tengah -->
-        <div class="dock-menu">
-            <!-- Setiap link memiliki data-tooltip untuk muncul saat di-hover (Desktop) -->
-            <a href="#beranda" class="dock-link active" data-tooltip="Beranda">
-                <i class="fas fa-home"></i>
-            </a>
-            <a href="#tentang" class="dock-link" data-tooltip="Tentang">
-                <i class="fas fa-user"></i>
-            </a>
-            <a href="#skil" class="dock-link" data-tooltip="Skil">
-                <i class="fas fa-code"></i>
-            </a>
-            <a href="#pendidikan" class="dock-link" data-tooltip="Pendidikan">
-                <i class="fas fa-graduation-cap"></i>
-            </a>
-            <a href="#proyek" class="dock-link" data-tooltip="Proyek">
-                <i class="fas fa-briefcase"></i>
-            </a>
-            <a href="#cara-kerja" class="dock-link" data-tooltip="Cara Kerja">
-                <i class="fas fa-cogs"></i>
-            </a>
-            <a href="#kontak" class="dock-link" data-tooltip="Kontak">
-                <i class="fas fa-envelope"></i>
-            </a>
-        </div>
-
-        <!-- Footer Teks Vertikal di Paling Bawah (Hanya Desktop) -->
-       
-    </aside>
-
+        <a href="#proyek" class="dock-link" data-tooltip="Proyek">
+            <i class="fas fa-briefcase"></i>
+        </a>
+        <a href="#cara-kerja" class="dock-link" data-tooltip="Cara Kerja">
+            <i class="fas fa-cogs"></i>
+        </a>
+        <a href="#kontak" class="dock-link" data-tooltip="Kontak">
+            <i class="fas fa-envelope"></i>
+        </a>
+    </div>
+</aside>
     <main>
         <!-- HERO SECTION -->
         <section id="beranda">
@@ -185,6 +186,119 @@
             </div>
         </section>
 
+        <!-- SECTION PRESTASI (SLIDER & COMPACT) -->
+<section id="prestasi" class="section">
+  <div class="container">
+    <h2 class="section-title">Prestasi & Penghargaan</h2>
+    
+    <div class="slider-container">
+      <button class="slide-btn prev-btn" onclick="moveSlide('prestasi-track', -1)">&#10094;</button>
+      
+      <div class="slider-track" id="prestasi-track">
+        
+        <!-- Kartu Prestasi 1 (Umum/Non-IT / Akademik) -->
+        <div class="achievement-card-compact" onclick="openPrestasiDetail('Juara 1 Lomba Debat Bahasa Indonesia', 'Tingkat Kabupaten / Provinsi - 2024', 'Berhasil meraih Juara 1 setelah melalui 4 babak penyisihan dan final. Menunjukkan kemampuan analisis kritis, komunikasi publik, serta kerja sama tim yang solid.')">
+          <div class="achieve-badge">...</div>
+          <h3 class="achieve-title">.........</h3>
+          <p class="achieve-level">......</p>
+          <button class="btn-detail">Lihat Detail</button>
+        </div>
+
+        <!-- Kartu Prestasi 2 (IT / Web) -->
+        <div class="achievement-card-compact" onclick="openPrestasiDetail('Juara 2 Web Development Showcase', 'Tingkat Sekolah / Vokasi - 2025', 'Mengembangkan aplikasi web responsif berbasis sistem manajemen terpadu yang dinilai terbaik dari segi performa dan antarmuka pengguna.')">
+          <div class="achieve-badge">.......</div>
+          <h3 class="achieve-title">..........</h3>
+          <p class="achieve-level">.........</p>
+          <button class="btn-detail">Lihat Detail</button>
+        </div>
+
+        <!-- Kartu Prestasi 3 (Non-IT / Olahraga / Seni / Lainnya) -->
+        <div class="achievement-card-compact" onclick="openPrestasiDetail('Penghargaan Siswa Teladan & Berprestasi', 'MAKN Ende - 2025', 'Diberikan atas kontribusi aktif dalam kegiatan ekstrakurikuler, kepemimpinan organisasi, serta konsistensi nilai akademik yang memuaskan.')">
+          <div class="achieve-badge">......</div>
+          <h3 class="achieve-title">......</h3>
+          <p class="achieve-level">.....</p>
+          <button class="btn-detail">Lihat Detail</button>
+        </div>
+
+        <!-- Kartu Prestasi 4 -->
+        <div class="achievement-card-compact" onclick="openPrestasiDetail('Juara 3 Kompetisi Matematika Terapan', 'Tingkat Kabupaten - 2024', 'Meraih peringkat ke-3 dalam ajang penalaran logika dan matematika terapan antar jenjang sekolah menengah.')">
+          <div class="achieve-badge">.......</div>
+          <h3 class="achieve-title">.......</h3>
+          <p class="achieve-level">.........</p>
+          <button class="btn-detail">Lihat Detail</button>
+        </div>
+
+      </div>
+
+      <button class="slide-btn next-btn" onclick="moveSlide('prestasi-track', 1)">&#10095;</button>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION SERTIFIKAT & PIAGAM (SLIDE FOTO) -->
+<section id="sertifikat" class="section bg-light">
+  <div class="container">
+    <h2 class="section-title">Piagam & Sertifikat</h2>
+    
+    <div class="slider-container">
+      <button class="slide-btn prev-btn" onclick="moveSlide('cert-track', -1)">&#10094;</button>
+
+      <div class="slider-track" id="cert-track">
+        
+        <!-- Slide Foto Sertifikat 1 -->
+        <div class="cert-card-slide" onclick="openImageModal('image/sertifikat-1.jpg', 'Sertifikat Pelatihan Keahlian')">
+          <div class="cert-img-box">
+            <img src="image/sertifikat-1.jpg" alt="Sertifikat Pelatihan" class="cert-img">
+            <div class="cert-overlay"><span>🔍 Perbesar</span></div>
+          </div>
+          <p class="cert-caption">Sertifikat Pelatihan Keahlian</p>
+        </div>
+
+        <!-- Slide Foto Sertifikat 2 -->
+        <div class="cert-card-slide" onclick="openImageModal('image/sertifikat-2.jpg', 'Piagam Penghargaan PKL')">
+          <div class="cert-img-box">
+            <img src="image/sertifikat-2.jpg" alt="Piagam PKL" class="cert-img">
+            <div class="cert-overlay"><span>🔍 Perbesar</span></div>
+          </div>
+          <p class="cert-caption">Piagam Praktik Kerja Lapangan (PKL)</p>
+        </div>
+
+        <!-- Slide Foto Sertifikat 3 -->
+        <div class="cert-card-slide" onclick="openImageModal('image/sertifikat-3.jpg', 'Sertifikat Kelulusan Program')">
+          <div class="cert-img-box">
+            <img src="image/sertifikat-3.jpg" alt="Sertifikat Program" class="cert-img">
+            <div class="cert-overlay"><span>🔍 Perbesar</span></div>
+          </div>
+          <p class="cert-caption">Sertifikat Kelulusan Program</p>
+        </div>
+
+      </div>
+
+      <button class="slide-btn next-btn" onclick="moveSlide('cert-track', 1)">&#10095;</button>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL DETAIL PRESTASI -->
+<div id="prestasiModal" class="modal" onclick="closeModalOnOuterClick(event, 'prestasiModal')">
+  <div class="modal-box">
+    <span class="close-modal" onclick="closeModal('prestasiModal')">&times;</span>
+    <h3 id="modalPrestasiTitle">Judul Prestasi</h3>
+    <span id="modalPrestasiSub" class="modal-subtitle">Sub-judul</span>
+    <hr class="modal-divider">
+    <p id="modalPrestasiDesc">Deskripsi detail prestasi...</p>
+  </div>
+</div>
+
+<!-- MODAL FOTO SERTIFIKAT FULL -->
+<div id="imageModal" class="modal" onclick="closeModalOnOuterClick(event, 'imageModal')">
+  <span class="close-modal" onclick="closeModal('imageModal')">&times;</span>
+  <div class="modal-img-container">
+    <img id="modalImgFull" src="" alt="Sertifikat">
+    <p id="modalImgCaption" class="modal-img-caption"></p>
+  </div>
+</div>
+
         <!-- PROJECTS SECTION -->
        <section id="proyek">
     <h2 class="section-title">Proyek <span class="text-accent">Terbaru</span></h2>
@@ -204,8 +318,8 @@
             </div>
             <div class="project-info">
                 <span class="project-date" style="font-size: 0.8rem; color: var(--text-muted); font-family: 'Fira Code', monospace;">April 2026</span>
-                <h3 class="project-title" style="margin-top: 5px;">Sistem Informasi Inventaris Barang</h3>
-                <p class="project-desc">Mengembangkan aplikasi manajemen stok barang, pengelolaan kategori, hingga riwayat transaksi multi-item secara mandiri dilengkapi kalkulasi otomatis berbasis web.</p>
+                <h3 class="project-title" style="margin-top: 5px;">Bad_Laundry — Web-Based Laundry Management System</h3>
+                <p class="project-desc"><p><strong>Bad_Laundry</strong> adalah sistem manajemen laundry berbasis web menggunakan PHP Native, MySQL, dan Bootstrap 5 yang mempermudah pencatatan transaksi, kelola data pelanggan, serta pemantauan status pesanan secara real-time.</p></p>
                 
                 <div class="project-tags" style="display: flex; gap: 8px; flex-wrap: wrap; margin: 15px 0;">
                     <span class="tag" style="background: #1e293b; border: 1px solid var(--border); color: #38bdf8; padding: 4px 10px; font-size: 0.8rem; border-radius: 6px; font-family: 'Fira Code', monospace;"><i class="fab fa-php"></i> PHP Native</span>
@@ -213,55 +327,13 @@
                 </div>
 
                 <div class="project-links">
-                    <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                    <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
+                    <a href="https://laundry-ibad.infinityfreeapp.com/login.php" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    <a href="https://github.com/ibadurrahmanhasan009" class="project-link"><i class="fab fa-github"></i> Source Code</a>
                 </div>
             </div>
         </div>
 
-        <div class="project-card" data-category="php-mysql">
-            <div class="project-img">
-                <img src="img_project/mitra.png" alt="Mitra Haidar Cell">
-            </div>
-            <div class="project-info">
-                <span class="project-date" style="font-size: 0.8rem; color: var(--text-muted); font-family: 'Fira Code', monospace;">Maret 2026</span>
-                <h3 class="project-title" style="margin-top: 5px;">Sistem Transaksi - Mitra Haidar Cell</h3>
-                <p class="project-desc">Membangun fitur pencatatan transaksi pulsa dan pembayaran digital dengan integrasi logika berbagai metode pembayaran (Transfer, DANA, BRI) dan optimasi skema database relasional.</p>
-                
-                <div class="project-tags" style="display: flex; gap: 8px; flex-wrap: wrap; margin: 15px 0;">
-                    <span class="tag" style="background: #1e293b; border: 1px solid var(--border); color: #38bdf8; padding: 4px 10px; font-size: 0.8rem; border-radius: 6px; font-family: 'Fira Code', monospace;"><i class="fab fa-php"></i> PHP</span>
-                    <span class="tag" style="background: #1e293b; border: 1px solid var(--border); color: #38bdf8; padding: 4px 10px; font-size: 0.8rem; border-radius: 6px; font-family: 'Fira Code', monospace;"><i class="fas fa-database"></i> MySQL</span>
-                    <span class="tag" style="background: #1e293b; border: 1px solid var(--border); color: #38bdf8; padding: 4px 10px; font-size: 0.8rem; border-radius: 6px; font-family: 'Fira Code', monospace;"><i class="fab fa-js"></i> JS Logic</span>
-                </div>
-
-                <div class="project-links">
-                    <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                    <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-card" data-category="php-mysql">
-            <div class="project-img">
-                <img src="image/" alt="Sistem Perpustakaan Sekolah">
-            </div>
-            <div class="project-info">
-                <span class="project-date" style="font-size: 0.8rem; color: var(--text-muted); font-family: 'Fira Code', monospace;">Februari 2026</span>
-                <h3 class="project-title" style="margin-top: 5px;">Sistem Perpustakaan Sekolah</h3>
-                <p class="project-desc">Membangun aplikasi manajemen sirkulasi buku (peminjaman & pengembalian) lengkap dengan sistem kalkulasi denda otomatis jika melewati batas waktu pengembalian buku.</p>
-                
-                <div class="project-tags" style="display: flex; gap: 8px; flex-wrap: wrap; margin: 15px 0;">
-                    <span class="tag" style="background: #1e293b; border: 1px solid var(--border); color: #38bdf8; padding: 4px 10px; font-size: 0.8rem; border-radius: 6px; font-family: 'Fira Code', monospace;"><i class="fab fa-php"></i> PHP Native</span>
-                    <span class="tag" style="background: #1e293b; border: 1px solid var(--border); color: #38bdf8; padding: 4px 10px; font-size: 0.8rem; border-radius: 6px; font-family: 'Fira Code', monospace;"><i class="fas fa-database"></i> MySQL</span>
-                </div>
-
-                <div class="project-links">
-                    <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                    <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
-                </div>
-            </div>
-        </div>
-
+  
         <div class="project-card" data-category="wordpress">
             <div class="project-img">
                 <img src="img_project/wordpres.png" alt="Website Company Profile - Wisata Alam">
@@ -286,82 +358,62 @@
     </div>
 </section>
 
-        <!-- WORK PROCESS SECTION -->
-        <section id="cara-kerja">
-            <h2 class="section-title">Cara <span class="text-accent">Saya Kerja</span></h2>
-            <span class="section-subtitle">Proses pengembangan yang saya terapkan</span>
+       <!-- CONTACT SECTION -->
+<section id="kontak">
+    <h2 class="section-title">Hubungi <span class="text-accent">Saya</span></h2>
+    <span class="section-subtitle">Mari diskusikan proyek Anda selanjutnya</span>
 
-            <div class="process-steps">
-                <div class="step-card">
-                    <div class="step-number">1</div>
-                    <h3 class="step-title">Analisis</h3>
-                    <p class="step-desc">Menyelidiki suatu project yang akan saya butuhkan dalam pembuatan Website.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">2</div>
-                    <h3 class="step-title">Desain</h3>
-                    <p class="step-desc">Membuat wireframe dan UI/UX design untuk visualisasi tampilan yang sudah saya analisis.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">3</div>
-                    <h3 class="step-title">Develop</h3>
-                    <p class="step-desc">Menulis kode bersih (clean code) dan membangun fungsionalitas.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">4</div>
-                    <h3 class="step-title">Launch</h3>
-                    <p class="step-desc">Testing akhir, deployment, dan maintenance Website.</p>
-                </div>
+    <div class="contact-wrapper">
+        <!-- INFORMASI KONTAK & WHATSAPP DIRECT -->
+        <div class="contact-info">
+            <h3>Ibadurrahman Hasan</h3>
+            <p style="color: var(--text-muted); margin-bottom: 25px;">
+                Saya selalu terbuka untuk berdiskusi tentang pengembangan Website.
+            </p>
+            
+            <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <span>ibadurrahmanhasan009@gmail.com</span>
             </div>
-        </section>
-
-        <!-- CONTACT SECTION -->
-        <section id="kontak">
-            <h2 class="section-title">Hubungi <span class="text-accent">Saya</span></h2>
-            <span class="section-subtitle">Mari diskusikan proyek Anda selanjutnya</span>
-
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <h3>Ibadurrahman Hasan</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 30px;">
-                        Saya selalu terbuka untuk berdiskusi tentang pengembangan Website.
-                    </p>
-                    
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>ibadurrahmanhasan009@gmail.com</span>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+62 851-3747--4756</span>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Nusa Tenggara Timur (Nagekeo), Indonesia</span>
-                    </div>
-
-                   
-                </div>
-
-                <div class="contact-form">
-                    <form onsubmit="handleFormSubmit(event)">
-                        <div class="form-group">
-                            <label>Nama Lengkap</label>
-                            <input type="text" required placeholder="Masukkan nama Anda">
-                        </div>
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" required placeholder="Masukkan email Anda">
-                        </div>
-                        <div class="form-group">
-                            <label>Pesan</label>
-                            <textarea rows="5" required placeholder="Tulis pesan Anda di sini..."></textarea>
-                        </div>
-                        <button type="submit" class="btn" style="width: 100%;">Kirim Pesan</button>
-                    </form>
-                </div>
+            <div class="info-item">
+                <i class="fas fa-phone"></i>
+                <span>+62 851-3747-4756</span>
             </div>
-        </section>
+            <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Nusa Tenggara Timur (Nagekeo), Indonesia</span>
+            </div>
+
+            <!-- TOMBOL DIRECT WHATSAPP -->
+            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+                <p style="font-weight: 600; margin-bottom: 10px;">Respon Cepat?</p>
+                <a href="https://wa.me/6285137474756?text=Halo%20Ibad,%20saya%20tertarik%20untuk%20berdiskusi%20tentang%20proyek%20website!" target="_blank" class="btn" style="background-color: #25d366; color: #fff; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                    <i class="fab fa-whatsapp" style="font-size: 1.2rem;"></i> Chat via WhatsApp
+                </a>
+            </div>
+        </div>
+
+        <!-- FORMULIR EMAIL (FORMSPREE) -->
+        <div class="contact-form">
+            <!-- Gantilah 'xzyvqwbj' dengan Form ID dari Formspree kamu -->
+            <form action=https://formspree.io/f/xqpargoa method="POST">
+                <div class="form-group">
+                    <label>Nama Lengkap</label>
+                    <input type="text" name="name" required placeholder="Masukkan nama Anda">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" required placeholder="Masukkan email Anda">
+                </div>
+                <div class="form-group">
+                    <label>Pesan</label>
+                    <textarea name="message" rows="5" required placeholder="Tulis pesan Anda di sini..."></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Kirim via Email</button>
+            </form>
+        </div>
+    </div>
+</section>
     </main>
     <footer class="main-footer">
     <div class="footer-container">
@@ -386,7 +438,7 @@
         <div class="footer-content">
             <h4>Terhubung</h4>
             <div class="social-icons">
-                <a href="#" class="social-link" title="GitHub">GH</a>
+                <a href="https://github.com/ibadurrahmanhasan009" class="social-link" title="GitHub">GH</a>
                 <a href="#" class="social-link" title="Instagram">IG</a>
                 <a href="#" class="social-link" title="LinkedIn">IN</a>
                 <a href="#" class="social-link" title="WhatsApp">WA</a>
