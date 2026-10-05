@@ -71,3 +71,44 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+// Fungsi Geser Slide
+function moveSlide(trackId, direction) {
+  const track = document.getElementById(trackId);
+  const scrollAmount = 260; // Jarak geser per klik
+  track.scrollBy({
+    left: direction * scrollAmount,
+    behavior: 'smooth'
+  });
+}
+
+// Buka Modal Detail Prestasi
+function openPrestasiDetail(title, subtitle, description) {
+  document.getElementById('modalPrestasiTitle').innerText = title;
+  document.getElementById('modalPrestasiSub').innerText = subtitle;
+  document.getElementById('modalPrestasiDesc').innerText = description;
+  
+  const modal = document.getElementById('prestasiModal');
+  modal.style.display = 'flex';
+}
+
+// Buka Modal Foto Sertifikat Full
+function openImageModal(imgSrc, caption) {
+  document.getElementById('modalImgFull').src = imgSrc;
+  document.getElementById('modalImgCaption').innerText = caption;
+  
+  const modal = document.getElementById('imageModal');
+  modal.style.display = 'flex';
+}
+
+// Tutup Modal
+function closeModal(modalId) {
+  document.getElementById(modalId).style.display = 'none';
+}
+
+// Tutup Modal jika area luar kotak diklik
+function closeModalOnOuterClick(event, modalId) {
+  if (event.target.id === modalId) {
+    closeModal(modalId);
+  }
+}
